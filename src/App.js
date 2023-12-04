@@ -1,57 +1,57 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Store from './pages/ourstore';
+import Blogs from './pages/Blogs';
+import Compareproduct from './pages/Compareproduct';
+import Wishlist from './pages/Wishlist';
+import Login from './pages/Login';
+import ForgotPassword from './pages/ForgotPassword';
+import Sinup from './pages/Sinup';
+import ResetPassword from './pages/ResetPassword';
+import SingelBlog from './pages/SingelBlog';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import RefundPolicy from './pages/RefundPolicy';
+import Termandcondition from './pages/Termandcondition';
+import ShipingPolicy from './pages/ShipingPolicy';
+import SingleProduct from './pages/SingleProduct';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes> 
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path='about' element={<About />} />
+            <Route path='contact' element={<Contact />} />
+            <Route path='store' element={<Store />} />
+            <Route path='product/:id' element={<SingleProduct />} />
+            <Route path='blogs' element={<Blogs />} />
+            <Route path='blog/:id' element={<SingelBlog />} />
+            <Route path='compareproduct' element={<Compareproduct />} />
+            <Route path='Wishlist' element={<Wishlist />} />
+            <Route path='login' element={<Login />} />
+            <Route path='ForgotPassword' element={<ForgotPassword />} />
+            <Route path='sinup' element={<Sinup />} />
+            <Route path='ResetPassword' element={<ResetPassword />} />
+            <Route path='PrivacyPolicy' element={<PrivacyPolicy />} />
+            <Route path='RefundPolicy' element={<RefundPolicy />} />
+            <Route path='Termandcondition' element={<Termandcondition />} />
+            <Route path='ShipingPolicy' element={<ShipingPolicy />} />
+            <Route path='cart' element={<Cart />} />
+            <Route path='checkout' element={<Checkout />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    app
+    </>
   );
 }
 
